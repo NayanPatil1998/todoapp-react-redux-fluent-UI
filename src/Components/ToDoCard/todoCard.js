@@ -1,8 +1,9 @@
 import React from "react";
 import {Card} from '@uifabric/react-cards'
-import { FontSizes, FontWeights, Icon, Image, Persona, Stack, Text } from "@fluentui/react";
+import { FontSizes, FontWeights, IconButton, initializeIcons, Text } from "@fluentui/react";
 
-function TodoCard() {
+function TodoCard({title, description, onclick, date}) {
+  initializeIcons();
     const cardTokens = { childrenMargin: 12, maxWidth: 450  };
     const siteTextStyles= {
         root: {
@@ -12,16 +13,21 @@ function TodoCard() {
       };
       const descriptionTextStyles = {
         root: {
-          color: '#333333',
+          fontSize: FontSizes.size18,
+
           fontWeight: FontWeights.semibold,
         },
       };
-      const helpfulTextStyles = {
+
+      const subduedTextStyles = {
         root: {
-          color: '#333333',
-          fontWeight: FontWeights.regular,
+
+          fontSize: FontSizes.size14
         },
       };
+
+  const forwardIcon = {iconName: 'Forward'} 
+  const disabled = false;
       
   return (
     <div className='' style={{width:"100%"}}>
@@ -30,17 +36,18 @@ function TodoCard() {
       >
         <Card.Section>
           <Text variant="small" styles={siteTextStyles}>
-            Contoso
+            {title}
           </Text>
           <Text styles={descriptionTextStyles}>
-            Contoso Denver expansion design marketing hero guidelines
+            {description}
           </Text>
-          <Text variant="small" styles={descriptionTextStyles}>
+          {/* <Text variant="small" styles={descriptionTextStyles}>
               Tuesday 2:00-4:30 pm
+            </Text> */}
+            <Text variant="small" styles={subduedTextStyles}>
+             {date}
             </Text>
-          <Text variant="small" styles={helpfulTextStyles}>
-            Is this recommendation helpful?
-          </Text>
+            <IconButton onClick={onclick} iconProps={forwardIcon} title="Forward" disabled={disabled} />
         </Card.Section>
         
       </Card>

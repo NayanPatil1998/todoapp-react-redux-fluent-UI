@@ -1,0 +1,10 @@
+.Todo{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+.Card{
+    margin: auto;
+    width: 300px;
+    padding: 10px;
+}
