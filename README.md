@@ -1,7 +1,6 @@
-# Getting Started with Create React App
+# TO DO List App using React Redux Fluent UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+![Project Image](https://github.com/NayanPatil1998/todoapp-react-redux-fluent-UI/blob/master/ss.gif)
 ## Available Scripts
 
 In the project directory, you can run:
